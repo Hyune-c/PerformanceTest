@@ -35,21 +35,21 @@ class CategoryColorTest {
   @Test
   void byStream() {
     stopWatch.start("byStream");
-    IntStream.range(0, 100000000).forEach(CategoryColor::getColorByStream);
+    IntStream.range(0, 100000000).forEach(order -> CategoryColor.getColorByStream(1));
     stopWatch.stop();
   }
 
   @Test
   void byArray() {
     stopWatch.start("byArray");
-    IntStream.range(0, 100000000).forEach(CategoryColor::getColorByArray);
+    IntStream.range(0, 100000000).forEach(order -> CategoryColor.getColorByArray(1));
     stopWatch.stop();
   }
 
   @Test
   void byHashMap() {
     stopWatch.start("byHashMap");
-    IntStream.range(0, 100000000).forEach(CategoryColor::getColorByHashMap);
+    IntStream.range(0, 100000000).forEach(order -> CategoryColor.getColorByHashMap(1));
     stopWatch.stop();
   }
 }

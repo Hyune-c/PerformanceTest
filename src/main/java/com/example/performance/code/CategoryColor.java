@@ -36,16 +36,16 @@ public enum CategoryColor {
    * @return
    */
   public static String getColorByHashMap(int order) {
-    return categoryColorMap.get(order % CategoryColor.categoryColorMap.size()).code;
+    return categoryColorMap.get(order).code;
   }
 
   public static String getColorByArray(int order) {
-    return CategoryColor.values()[order % CategoryColor.categoryColorMap.size()].code;
+    return CategoryColor.values()[order].code;
   }
 
   public static String getColorByStream(int order) {
     return Arrays.stream(CategoryColor.values())
-        .filter(categoryColor -> categoryColor.order == (order % CategoryColor.categoryColorMap.size()))
+        .filter(categoryColor -> categoryColor.order == order)
         .findAny()
         .map(CategoryColor::getCode)
         .orElse(CategoryColor.YELLOW.code);
