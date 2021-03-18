@@ -1,0 +1,9 @@
+language: java
+
+jdk:
+  - oraclejdk11
+
+script: "./gradlew clean build"
+
+after_success:
+  - ./gradlew jacocoTestReport coveralls
